@@ -106,20 +106,22 @@ onTop.addEventListener('click', () => {
 
 const ourWorksSlides = document.querySelectorAll('.ourWorks-slide');
 
-    let slidesCounter = 0
+if (ourWorksSlides.length > 0) {
+  let slidesCounter = 0;
 
-setInterval(() => {
-  ourWorksSlides.forEach(ourWorksSlide => {
-    ourWorksSlide.classList.remove('active');
-  })
-  ourWorksSlides[slidesCounter].classList.add('active');
-
-  slidesCounter += 1;
-
-  if(slidesCounter >= ourWorksSlides.length){
-    slidesCounter = 0;
+  function showSlide(index) {
+    ourWorksSlides.forEach((slide, i) => {
+      slide.classList.toggle('active', i === index);
+    });
   }
-}, 3000)
+
+  showSlide(0);
+
+  setInterval(() => {
+    slidesCounter = (slidesCounter + 1) % ourWorksSlides.length;
+    showSlide(slidesCounter);
+  }, 3000);
+}
 
 
 

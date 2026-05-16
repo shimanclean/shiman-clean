@@ -673,22 +673,19 @@ section:nth-child(2n-1){
 
 .ourWorks-carousel {
   width: 100%;
+  height: 1020px;
   position: relative;
   border-radius: var(--radius-image);
-  height: 660px;
 }
 
 .ourWorks-slide {
   position: absolute;
-  top: 0;
-  left: 0;
-  opacity: 0;
-  transition: opacity 1s ease;
-  position: absolute;
+  inset: 0;
   width: 100%;
   display: flex;
   flex-direction: column;
-  
+  opacity: 0;
+  transition: opacity 1s ease;
 }
 
 .ourWorks-slide.active {
@@ -696,22 +693,33 @@ section:nth-child(2n-1){
 }
 
 .ourWorks-before-img-wrap,
-.ourWorks-before-img {
-  width: 100%; 
-  border-radius: 18px 18px 0 0;
-}
-
+.ourWorks-before-img,
 .ourWorks-after-img-wrap,
 .ourWorks-after-img {
   width: 100%;
-  height: 320px;
-  border-radius: 0 0 18px 18px;
 }
+
+.ourWorks-before-img,
+.ourWorks-before-img-wrap {
+  border-radius: 18px 18px 0 0;
+  height: 50%;
+}
+
+.ourWorks-after-img,
+.ourWorks-after-img-wrap {
+  border-radius: 0 0 18px 18px;
+  height: 50%;
+}
+
+.ourWorks-before-img,
+.ourWorks-after-img{
+  position: absolute;
+}
+
 
 .ourWorks-carousel-deco {
   position: absolute;
   width: 100%;
-  height: 100%;
   display: flex;
   justify-content: space-between;
   padding-top: 32px;
@@ -748,6 +756,7 @@ section:nth-child(2n-1){
   font-weight: var(--text-lg-weight);
   text-align: center;
 }
+
 
 .window-backdrop {
   position: fixed;
@@ -913,6 +922,7 @@ section:nth-child(2n-1){
   display: none;
 }
 
+
 @media (min-width: 480px) and (max-width: 720px) {
   .services-card {
     width: 400px;
@@ -1006,8 +1016,7 @@ section:nth-child(2n-1){
     font-size: calc(var(--h2-size) * 0.7);
   }
 
-
-
+  
   .header-paragraph {
     text-align: start;
     line-height: 30px;
@@ -1029,7 +1038,7 @@ section:nth-child(2n-1){
   }
 
   .reviews-slide {
-    height: 240px;
+    height: 250px;
   }
 
   .controls {
@@ -1037,7 +1046,6 @@ section:nth-child(2n-1){
   }
 
   .ourWorks-slide {
-    flex-direction: row;
     border: 2px solid var(--color-border);
     border-radius: 20px;
   }
@@ -1089,6 +1097,8 @@ section:nth-child(2n-1){
       box-shadow: 0 0 16px 12px var(--color-primary-light);
     }
   }
+
+  
 
   .window-modal-content{
   width: 45%;
@@ -1235,8 +1245,128 @@ section:nth-child(2n-1){
 
   .accordion-active .plus::after {
     transform: translate(-50%, -50%) rotate(0deg);
+  }  
+}
+
+
+
+.ourWorks-carousel {
+  width: 100%;
+  position: relative;
+  border-radius: var(--radius-image);
+  overflow: hidden;
+}
+
+.ourWorks-slide {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  opacity: 0;
+  transition: opacity 0.8s ease;
+}
+
+
+
+.ourWorks-before-img-wrap,
+.ourWorks-after-img-wrap {
+  width: 100%;
+  height: 50%;
+  position: relative;
+}
+
+.ourWorks-before-img,
+.ourWorks-after-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.ourWorks-carousel-deco {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.ourWorks-before-wrap,
+.ourWorks-after-wrap {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-weight: 600;
+}
+
+.ourWorks-before-wrap {
+  background: var(--color-accent-first);
+  top: 16px;
+  left: 16px;
+}
+
+.ourWorks-after-wrap {
+  background: var(--color-accent-second);
+  bottom: 16px;
+  right: 16px;
+}
+
+
+@media (min-width: 720px) {
+
+  .ourWorks-carousel {
+    height: 500px;
   }
 
+  .ourWorks-slide {
+    flex-direction: row;
+    height: 500px;
+  }
 
-  
+  .ourWorks-before-img-wrap,
+  .ourWorks-after-img-wrap {
+    width: 50%;
+    height: 100%;
+  }
+
+  .ourWorks-before-img,
+  .ourWorks-after-img {
+    height: 100%;
+  }
+
+  .ourWorks-slide {
+    border: 2px solid var(--color-border);
+    border-radius: 20px;
+  }
+
+  .ourWorks-before-wrap,
+  .ourWorks-after-wrap {
+    width: 92px;
+    height: 92px;
+  }
+
+  .ourWorks-before,
+  .ourWorks-after {
+    font-size: var(--h4-size);
+  }
+}
+
+@media (min-width: 1024px) {
+
+  .ourWorks-carousel {
+    height: 520px;
+  }
+
+  .ourWorks-before-wrap {
+    top: 24px;
+    left: 24px;
+  }
+
+  .ourWorks-after-wrap {
+    bottom: 40px;
+    right: 24px;
+  }
 }
