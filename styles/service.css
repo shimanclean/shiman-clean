@@ -190,7 +190,12 @@ section:nth-child(2n-1){
 }
 
 #hero {
-  background-color: #6b7c85;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+              url(../images/shiman-hero.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 100px 0;
 }
 
 .hero-title {

@@ -96,10 +96,13 @@ section:nth-child(2n-1){
 }
 
 .header-middle-section {
-  background-color: var(--color-hero);
   border-top: var(--border-section);
   border-bottom: var(--border-section);
-  
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+              url(../images/shiman-hero.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   position: relative;
   position: relative;
   z-index: 1;
@@ -189,6 +192,10 @@ section:nth-child(2n-1){
 
 .middle-header-img-wrap {
   display: none;
+}
+
+.middle-header-img{
+  border-radius: var(--radius-image);
 }
 
 .header-bottom-section {
@@ -667,8 +674,8 @@ section:nth-child(2n-1){
 .ourWorks-carousel {
   width: 100%;
   position: relative;
-  height: 320px;
   border-radius: var(--radius-image);
+  height: 500px;
 }
 
 .ourWorks-slide {
@@ -681,7 +688,7 @@ section:nth-child(2n-1){
   width: 100%;
   display: flex;
   flex-direction: column;
-  height: 320px;
+  
 }
 
 .ourWorks-slide.active {
@@ -690,16 +697,13 @@ section:nth-child(2n-1){
 
 .ourWorks-before-img-wrap,
 .ourWorks-before-img {
-  width: 100%;
-  background-color: var(--color-accent-second);
-  height: 320px;
+  width: 100%; 
   border-radius: 18px 18px 0 0;
 }
 
 .ourWorks-after-img-wrap,
 .ourWorks-after-img {
   width: 100%;
-  background-color: var(--color-accent-first);
   height: 320px;
   border-radius: 0 0 18px 18px;
 }
@@ -974,6 +978,11 @@ section:nth-child(2n-1){
     gap: 32px;
     align-items: center;
   }
+  
+  .header-middle-section{
+    background-image: none;
+    background-color: var(--color-hero);
+  }
 
   .header-subtitle {
     text-align: start;
@@ -1029,22 +1038,27 @@ section:nth-child(2n-1){
 
   .ourWorks-slide {
     flex-direction: row;
+    border: 2px solid var(--color-border);
+    border-radius: 20px;
   }
 
   .ourWorks-before-img-wrap,
   .ourWorks-before-img {
     width: 50%;
-    background-color: var(--color-accent-second);
     border-radius: 18px 0 0 18px;
-    height: 320px;
+    height: 500px;
   }
 
   .ourWorks-after-img-wrap,
   .ourWorks-after-img {
     width: 50%;
-    background-color: var(--color-accent-first);
     border-radius: 0 18px 18px 0;
-    height: 320px;
+    height: 500px;
+  }
+
+  .ourWorks-after-img,
+  .ourWorks-before-img{
+    width: 100%;
   }
 
   .ourWorks-after-wrap {
